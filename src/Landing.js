@@ -16,8 +16,6 @@ const Landing = () =>  (
                 <i className="fa fa-bars" aria-hidden="true"></i>
             </button>
 
-            
-            
             <div className="collapse navbar-collapse navbar_supported"> 
                 <ul className="navbar-nav"> 
                 
@@ -68,18 +66,13 @@ const Landing = () =>  (
             </div> 
         </nav>   
     </header>
-     
-     
-    
-    
-    
-     
+
     <section className="banner_area">  
     	<div className="container">
     		<div className="banner_content">  
 				<h2 className="wow fadeInUp animated">DREAM ★ BIG</h2> 
         <h3 className="wow fadeInUp animated">Create your own online portfolio, completely customized to show what makes you unique</h3>
-				<Link to="#" className="theme_btn wow fadeInUp animated" data-wow-delay="0.3s"></Link>
+				<Link to="#" className="theme_btn wow fadeInUp animated" data-wow-delay="0.3s">Get Started</Link>
     		</div>
     	</div>   
     	<div className="illustration">  
@@ -89,8 +82,6 @@ const Landing = () =>  (
     	</div> 
     	
     </section>
-     
-    
      
     <section className="experience_area">
     	<div className="container">
