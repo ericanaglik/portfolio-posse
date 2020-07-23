@@ -54,7 +54,7 @@ const Landing = () => (
             makes you unique
           </h3>
           <Link
-            to="#"
+            to="/signup"
             className="theme_btn wow fadeInUp animated"
             data-wow-delay="0.3s"
           >
