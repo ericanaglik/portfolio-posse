@@ -5,6 +5,8 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
+commit.log
+my-keys.md
 
 # Diagnostic reports (https://nodejs.org/api/report.html)
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
@@ -71,6 +73,7 @@ typings/
 # dotenv environment variables file
 .env
 .env.test
+.env.production.local
 
 # parcel-bundler cache (https://parceljs.org/)
 .cache
@@ -102,3 +105,8 @@ dist
 
 # TernJS port file
 .tern-port
+
+.idea
+commit.log
+client/build
+client/node_modules
