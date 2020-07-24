@@ -23,9 +23,6 @@ body {
     z-index: 1;
 }
 
-.progress-bar {
-  margin: 30px;
-}
 
 .container-auth {
   overflow-y: hidden;
@@ -136,6 +133,9 @@ button {
 .page-title {
     font-weight: 400;
     font-size: 35px;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    text-decoration-color: #FA3A7F;
 }
 
 .window {

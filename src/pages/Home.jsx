@@ -13,9 +13,8 @@ const Home = () => {
           <StepProgressBar/>
           </div>
             <p className="page-title">Sign Up</p>
-            <p style={{ fontSize: 20, padding: 30 }}>
-                Get started today with just a username and password for
-                apps like Facebook, Instagram, and Google.
+            <p style={{ fontSize: 20, padding: 30, paddingBottom: 60, paddingTop: 60}}>
+                Create your portfolio today. Portolio Posse has easy and fast sign up using your account with any of these apps.
             </p>
             {/* <Terminal
                 userData={"passport.authenticate('facebook')"}
