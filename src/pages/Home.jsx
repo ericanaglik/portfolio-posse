@@ -2,12 +2,19 @@ import React from "react";
 // import Terminal from "../components/displays/Terminal";
 import CardList from "../components/cards/CardList";
 import StepProgressBar from "../components/StepProgressBar"
+import NavBar from "../NavBar"
 
 const Home = () => {
     return (
       <div>
+        
       
         <div className="page" style={{ textAlign: "center" }}>
+        <div className="nav-container">
+        <header className="auth_header_area">
+      <NavBar/>
+    </header>
+    </div>
         <div className="container-auth">
         <div className="progress-bar">
           <StepProgressBar/>
