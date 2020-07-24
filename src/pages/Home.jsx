@@ -1,26 +1,29 @@
 import React from "react";
 // import Terminal from "../components/displays/Terminal";
 import CardList from "../components/cards/CardList";
+import StepProgressBar from "../components/StepProgressBar"
 
 const Home = () => {
     return (
+      <div>
+      
         <div className="page" style={{ textAlign: "center" }}>
-            <p className="page-title">Simple OAuth with Node.js</p>
-            <p style={{ fontSize: 20 }}>
-                Portfolio Posse contains support for over
-                <span style={{ color: "var(--primary-red)" }}> 500+ </span>
-                Get started today with just a username and password for
-                apps like Facebook, Instagram, and Google.
+        <div className="container-auth">
+        <div className="progress-bar">
+          <StepProgressBar/>
+          </div>
+            <p className="page-title">Sign Up</p>
+            <p style={{ fontSize: 20, padding: 30, paddingBottom: 60, paddingTop: 60}}>
+                Create your portfolio today. Portolio Posse has easy and fast sign up using your account with any of these apps.
             </p>
             {/* <Terminal
                 userData={"passport.authenticate('facebook')"}
                 selected="All"
             /> */}
-            <p style={{ fontSize: 28}}>
-                Popular Strategies
-            </p>
             <CardList />
-            <div style={{ marginBottom: 20 }} />
+            </div>
+        </div>
+        <div className="background-gradient"></div>
         </div>
     );
 };
