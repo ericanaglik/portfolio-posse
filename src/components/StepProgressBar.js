@@ -1,20 +1,36 @@
 import React from "react";
 import "../style/step.css";
 import { ProgressBar, Step } from "react-step-progress-bar";
-import {ReactComponent as SignUpIcon} from '../svg/User.svg'
-import {ReactComponent as TemplateIcon} from '../svg/Favorite App.svg'
-import {ReactComponent as InformationIcon} from '../svg/Note Pencil.svg'
+import { faUser } from "@fortawesome/free-solid-svg-icons";
+import { faPaintBrush } from "@fortawesome/free-solid-svg-icons";
+import { faEdit } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 class StepProgressBar extends React.Component {
   render() {
     return (
+      <div>
+        <div className="bar-container">
       <ProgressBar percent={0}>
         <Step>
           {({ accomplished, index }) => (
             <div
               className={`indexedStep ${accomplished ? "accomplished" : null}`}
             >
-              <SignUpIcon/>
+              <FontAwesomeIcon icon={faUser} />
+              
+            </div>
+            
+          )}
+          
+        </Step>
+        
+        <Step>
+          {({ accomplished, index }) => (
+            <div
+              className={`indexedStep ${accomplished ? "accomplished" : null}`}
+            >
+              <FontAwesomeIcon icon={faPaintBrush} />
             </div>
           )}
         </Step>
@@ -23,20 +39,18 @@ class StepProgressBar extends React.Component {
             <div
               className={`indexedStep ${accomplished ? "accomplished" : null}`}
             >
-              <TemplateIcon/>
-            </div>
-          )}
-        </Step>
-        <Step>
-          {({ accomplished, index }) => (
-            <div
-              className={`indexedStep ${accomplished ? "accomplished" : null}`}
-            >
-              <InformationIcon/>
+              <FontAwesomeIcon icon={faEdit} />
             </div>
           )}
         </Step>
       </ProgressBar>
+      </div>
+      <div className="progress-text">
+        <h3>Sign Up</h3>
+        <h3>Choose A Template</h3>
+        <h3>Add Information</h3>
+      </div>
+      </div>
     );
   }
 }
