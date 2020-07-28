@@ -1,5 +1,4 @@
 import React from "react";
-// import Terminal from "../components/displays/Terminal";
 import CardList from "../components/cards/CardList";
 import StepProgressBar from "../components/StepProgressBar"
 import NavBar from "../NavBar"
@@ -23,10 +22,6 @@ const Home = () => {
             <p style={{ fontSize: 20, padding: 30, paddingBottom: 60, paddingTop: 60}}>
                 Create your portfolio today. Portolio Posse has easy and fast sign up using your account with any of these apps.
             </p>
-            {/* <Terminal
-                userData={"passport.authenticate('facebook')"}
-                selected="All"
-            /> */}
             <CardList />
             </div>
         </div>
