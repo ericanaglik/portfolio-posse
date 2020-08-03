@@ -180,7 +180,7 @@ class Landing extends Component {
                 <Link to="#">Example Templates</Link>
               </li>
               <li>
-                <Link to="blog.html">Log In</Link>
+                <Link to="/login">Log In</Link>
               </li>
             </ul>
           </div>
