@@ -7,16 +7,18 @@ import UserProvider from "./contexts/UserProvider";
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import "./style/index.css"
+import UserInfo from "./pages/UserInfo";
 
 const App = () => (
   <div>
     <Router history={history}>
-    <UserProvider>
-        <Route path="/profile" component={Profile} />
-    </UserProvider>
-    <Route path="/" exact component={Landing} />
-    <Route path="/signup" exact component={Home} />
-  </Router>
+      <UserProvider>
+          <Route path="/profile" component={Profile} />
+      </UserProvider>
+      <Route path="/" exact component={Landing} />
+      <Route path="/signup" component={Home} />
+      <Route path="/userInfo" component={UserInfo} />
+    </Router>
   </div>
   );
 

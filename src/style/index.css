@@ -133,11 +133,12 @@ button {
 
 
 .page-title {
-    font-weight: 400;
+    font-weight: 600;
     font-size: 35px;
-    text-decoration: underline;
-    text-decoration-style: dotted;
-    text-decoration-color: #FA3A7F;
+    /* text-decoration: underline; */
+    /* text-decoration-style: dotted; */
+    /* text-decoration-color: #FA3A7F; */
+    color: #FA3A7F;
 }
 
 .window {
