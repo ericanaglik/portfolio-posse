@@ -229,8 +229,8 @@ class Landing extends Component {
             </div>
             <div className="col-md-6 order-md-first  wow slideInLeft">
               <p>
-                © 2020
-                <Link to="#">Portfolio Posse</Link>
+                © 2020 &nbsp;
+                <Link to="#">Portfolio Posse</Link> &nbsp;
                 All rights reserved
               </p>
             </div>
