@@ -14,6 +14,7 @@ const chalk = require("chalk");
 
 let user = {};
 
+
 passport.serializeUser((user, cb) => {
     cb(null, user);
 });
@@ -109,6 +110,8 @@ passport.use(new TwitchStrategy({
 const app = express();
 app.use(cors());
 app.use(passport.initialize());
+app.use(express.json());
+
 
 app.get("/auth/facebook", passport.authenticate("facebook"));
 app.get("/auth/facebook/callback",
@@ -173,6 +176,10 @@ app.get("/auth/logout", (req, res) => {
     user = {};
     res.redirect("/");
 });
+
+app.post("/api/test", (req, res) => {
+  res.send(req.body)
+})
 
 
 const PORT = 5000;
