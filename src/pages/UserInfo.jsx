@@ -7,22 +7,30 @@ import { useFormik } from "formik";
 
 const validate = values => {
     const errors = {};
-    if (!values.firstName) {
+    if (!values.name) {
       errors.firstName = 'Required';
-    } else if (values.firstName.length > 15) {
-      errors.firstName = 'Must be 15 characters or less';
+    } else if (values.name.length > 30) {
+      errors.name = 'Must be 30 characters or less';
     }
   
-    if (!values.lastName) {
-      errors.lastName = 'Required';
-    } else if (values.lastName.length > 20) {
-      errors.lastName = 'Must be 20 characters or less';
+    if (!values.tagline) {
+      errors.tagline = 'Required';
+    } else if (values.tagline.length > 100) {
+      errors.tagline = 'Must be 100 characters or less';
     }
   
-    if (!values.professionalTitle) {
-      errors.professionalTitle = 'Required';
-    } else if (values.professionalTitle.length > 20) {
-      errors.professionalTitle = 'Must be 20 characters or less';
+    if (values.tagline_2.length > 100) {
+      errors.tagline_2 = 'Must be 100 characters or less';
+    }
+
+    if (!values.photo_url) {
+      errors.photo_url = 'Required';
+    } 
+
+    if (!values.bio) {
+      errors.bio = 'Required';
+    } else if (values.bio.length > 300) {
+      errors.bio = 'Must be 300 characters or less';
     }
   
     return errors;
@@ -31,13 +39,15 @@ const validate = values => {
 const UserInfo = () => {
     const formik = useFormik({
         initialValues: {
-          firstName: '',
-          lastName: '',
-          professionalTitle: '',
+          name: '',
+          tagline: '',
+          tagline_2: '',
+          photo_url: '',
+          bio: '',
         },
         validate,
         onSubmit: (values, actions) => {
-          axios.post('/api/test', values)
+          axios.post('/api/profile/create', values)
           .then((result) => console.log(result.data))
           actions.setSubmitting(false)
           actions.resetForm()
@@ -60,36 +70,56 @@ const UserInfo = () => {
         </div>
         
         <form onSubmit={formik.handleSubmit}>
-          <label htmlFor="firstName">First Name</label>
+          <label htmlFor="name">Name</label>
           <input
-              id="firstName"
-              name="firstName"
+              id="name"
+              name="name"
               type="text"
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-              value={formik.values.firstName}
+              value={formik.values.name}
           />
-          {formik.errors.firstName ? <div>{formik.errors.firstName}</div> : null}
-          <label htmlFor="lastName">Last Name</label>
+          {formik.errors.name ? <div>{formik.errors.name}</div> : null}
+          <label htmlFor="tagline">Tagline</label>
           <input
-              id="lastName"
-              name="lastName"
+              id="tagline"
+              name="tagline"
               type="text"
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-              value={formik.values.lastName}
+              value={formik.values.tagline}
           />
-          {formik.errors.lastName ? <div>{formik.errors.lastName}</div> : null}
-          <label htmlFor="professionalTitle">Professional Title </label>
+          {formik.errors.tagline ? <div>{formik.errors.tagline}</div> : null}
+          <label htmlFor="tagline_2">Tagline 2 *Optional*</label>
           <input
-              id="professionalTitle"
-              name="professionalTitle"
-              type="professionalTitle"
+              id="tagline_2"
+              name="tagline_2"
+              type="tagline_2"
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-              value={formik.values.professionalTitle}
+              value={formik.values.tagline_2}
           />
-          {formik.errors.professionalTitle ? <div>{formik.errors.professionalTitle}</div> : null}
+          {formik.errors.tagline_2 ? <div>{formik.errors.tagline_2}</div> : null}
+          <label htmlFor="name">Header Photo Url</label>
+          <input
+              id="photo_url"
+              name="photo_url"
+              type="photo_url"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              value={formik.values.photo_url}
+          />
+          {formik.errors.photo_url ? <div>{formik.errors.photo_url}</div> : null}
+          <label htmlFor="name">Bio</label>
+          <input
+              id="bio"
+              name="bio"
+              type="bio"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              value={formik.values.bio}
+          />
+          {formik.errors.bio ? <div>{formik.errors.bio}</div> : null}
           <button type="submit">Submit</button>
         </form>
         </div>
