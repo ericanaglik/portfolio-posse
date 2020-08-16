@@ -1,6 +1,6 @@
 const express = require("express");
 const cors = require("cors");
-const profileModel = require("models/profile")
+const profileModel = require("./models/profile");
 const passport = require("passport");
 const FacebookStrategy = require("passport-facebook").Strategy;
 const AmazonStrategy = require("passport-amazon").Strategy;
@@ -181,6 +181,10 @@ app.get("/auth/logout", (req, res) => {
     user = {};
     res.redirect("/");
 });
+
+app.post("api/test", (req, res) => {
+  res.send(req.body)
+})
 
 app.post("/api/profile/create", async (req, res) => {
   const profile = new profileModel(req.body)
