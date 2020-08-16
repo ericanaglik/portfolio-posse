@@ -182,7 +182,7 @@ app.get("/auth/logout", (req, res) => {
     res.redirect("/");
 });
 
-app.post("api/test", (req, res) => {
+app.post("/api/test", (req, res) => {
   res.send(req.body)
 })
 
