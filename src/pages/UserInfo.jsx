@@ -47,7 +47,7 @@ const UserInfo = () => {
         },
         validate,
         onSubmit: (values, actions) => {
-          axios.post('/api/test', values)
+          axios.post('/api/profile/create', values)
           .then((result) => console.log(result.data))
           actions.setSubmitting(false)
           actions.resetForm()
