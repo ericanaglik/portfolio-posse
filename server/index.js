@@ -13,9 +13,13 @@ const keys = require("../config");
 const chalk = require("chalk");
 
 const mongoose = require("mongoose")
-mongoose.connect("mongodb+srv://admin:x#j1hXfYRc64@cluster0.fdd5r.mongodb.net/profileposse?retryWrites=true&w=majority", {
+mongoose.connect("mongodb+srv://admin:x%23j1hXfYRc64@cluster0.fdd5r.mongodb.net/portfolioposse?retryWrites=true&w=majority", {
   useNewUrlParser: true
-})
+}).then(
+  ()=> console.log('connected to db')
+).catch(
+    (err)=> console.error(err)
+);
 
 let user = {};
 
