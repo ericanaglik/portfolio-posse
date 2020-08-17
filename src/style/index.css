@@ -2,6 +2,11 @@
     --primary-red: #f64f59;
 }
 
+body {
+  overflow: hidden;
+}
+
+
 body .page {
     
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -22,6 +27,25 @@ body .page {
     position: absolute;
     z-index: 1;
 }
+
+
+/* .form {
+  background: #fff;
+  padding: 10px 30px;
+  padding-left: 140px;
+  padding-right: 140px;
+  padding-bottom: 20px;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+
+} */
+
+/* .form-container {
+  display: flex;
+  flex-direction: column;
+
+} */
 
 
 .container-auth {
@@ -46,6 +70,152 @@ body .page {
 
 
 
+
+.question-pos {
+  display: inline-block;
+  height: 120px;
+}
+
+.question-pos2 {
+  display: inline-block;
+  height: 65px;
+}
+
+
+
+
+.question:hover {
+  color: #7B29D9;
+}
+
+.question2:hover {
+  color: #7B29D9;
+}
+
+/* Tooltip container */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+ 
+}
+
+.tooltip .tooltiptext::after {
+  content: " ";
+  position: absolute;
+  top: 50%;
+  right: 100%; /* To the left of the tooltip */
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent black transparent transparent;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+
+
+.form-body{
+  width:100%;
+  height:200px;
+  display:flex;
+}
+.form-container{
+  max-width:600px;
+  margin:auto;
+  padding:20px;
+  box-sizing:border-box;
+  box-shadow:0px 3px 6px rgba(0, 0, 0, 0.5);
+  font-size:16px;
+  border:1px solid #444;
+  border-radius:3px;
+  animation: 1.25s flyin ease;
+}
+
+.inputs{
+  position:relative;
+  float:left;
+  width:93%;
+  
+  box-sizing:border-box;
+  padding:10px 0px 10px 10px;
+}
+.inputs.half{ width:46.5%; }
+
+.inputs input{
+  width:100%;
+  padding:20px 0px 4px 0px;
+  background:transparent;
+  
+  box-sizing:border-box;
+  border-color: #AAA;
+  border-width: 0px 0px 2px 0px;
+  color:black;
+  outline:none;
+  transition:all 0.3s;
+  padding:0px 15x;
+}
+
+.inputs input:focus{
+  border-bottom:2px solid #762AD6;
+}
+
+
+
+.inputs input + label:after{
+  content: " ";
+}
+
+
+.inputs input:placeholder-shown + label{
+  color:#999;
+  left:14px;
+  bottom:-8px;
+}
+.inputs input:focus + label,
+.inputs input + label{
+  position:absolute;
+  bottom:14px;
+  left:10px;
+  color:#999;
+  line-height:60px;
+  pointer-events:none;
+  transition: all 0.25s;
+  font-size:14px;
+}
+
+.form-button{
+  border:0px;
+  padding:10px 40px;
+  border-radius:3px;
+  background:#F93A7F;
+  color:white;
+  float:right;
+  font-weight:bold;
+  border:3px solid transparent;
+  transition:all 0.5s;
+}
+.form-button:hover{
+  border:3px double #fff;
+}
+
+@keyframes flyin{
+  from{ transform: translateY(100%); opacity:0; }
+}
   
 
 pre {
