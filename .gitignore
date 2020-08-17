@@ -110,3 +110,4 @@ dist
 commit.log
 client/build
 client/node_modules
+package-lock.json

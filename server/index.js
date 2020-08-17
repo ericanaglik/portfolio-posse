@@ -1,6 +1,6 @@
 const express = require("express");
 const cors = require("cors");
-
+const profileModel = require("./models/profile");
 const passport = require("passport");
 const FacebookStrategy = require("passport-facebook").Strategy;
 const AmazonStrategy = require("passport-amazon").Strategy;
@@ -12,7 +12,17 @@ const TwitchStrategy = require("passport-twitch.js").Strategy;
 const keys = require("../config");
 const chalk = require("chalk");
 
+const mongoose = require("mongoose")
+mongoose.connect("mongodb+srv://admin:x%23j1hXfYRc64@cluster0.fdd5r.mongodb.net/portfolioposse?retryWrites=true&w=majority", {
+  useNewUrlParser: true
+}).then(
+  ()=> console.log('connected to db')
+).catch(
+    (err)=> console.error(err)
+);
+
 let user = {};
+
 
 passport.serializeUser((user, cb) => {
     cb(null, user);
@@ -109,6 +119,8 @@ passport.use(new TwitchStrategy({
 const app = express();
 app.use(cors());
 app.use(passport.initialize());
+app.use(express.json());
+
 
 app.get("/auth/facebook", passport.authenticate("facebook"));
 app.get("/auth/facebook/callback",
@@ -173,6 +185,20 @@ app.get("/auth/logout", (req, res) => {
     user = {};
     res.redirect("/");
 });
+
+app.post("/api/test", (req, res) => {
+  res.send(req.body)
+})
+
+app.post("/api/profile/create", async (req, res) => {
+  const profile = new profileModel(req.body)
+  try{
+    await profile.save()
+    res.send("Profile Created")
+  } catch (err) {
+    res.status(500).send(err)
+  }
+})
 
 
 const PORT = 5000;
